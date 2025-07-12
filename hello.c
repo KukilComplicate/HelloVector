@@ -1,34 +1,25 @@
-// Physics Vector
 #include <stdio.h>
-#include <math.h>
-#define N 10
-
-struct Location{
-    double x;
-    double y;
-    double z;
-};
+#include "vectors.h"
 
 int main()
 {
-    printf("Hello World!\n");
+    printf("Testing Vectors\n");
+    vector2 v1 = create(2.12f, 3.15f);
+    vector2 v2 = create(-3.15f, -1.50f);
 
-    struct Location L1;
-    L1.x = 70.0;
-    L1.y = 21.2;
-    L1.z = 36.6;
+    printf("Vector1 x:%.2f y:%.2f and its magnitude:%.2f\n", v1.x, v1.y, v1.magnitude);
+    printf("Vector2 x:%.2f y:%.2f and its magnitude:%.2f\n", v2.x, v2.y, v2.magnitude);
 
-    int a = 0;
+    printf("Distance between v1 and v2 is %.2f\n\n", distance(v1, v2));
 
-    for(int i=0; i<5; i++)
-    {
-        a = a + N;
-        printf("The value of a is %d\n", a);
-    }
+    // creating and testing 3 vectors
+    vector3 v3 = create_3(2.5f, 3.0f, -10.f);
+    vector3 v4 = create_3(-3.f, 2.0f, 6.f);
 
-    printf("\n");
-    printf("The position of L1 is %lf, %lf, %lf\n", L1.x, L1.y, L1.z);
-    double mag = L1.x * L1.x + L1.y * L1.y + L1.z * L1.z; 
-    printf("The magnitude of L1 is %lf\n", sqrt(mag));
+    printf("Vector3 x:%.2f y:%.2f z:%.2f and its magnitude:%.2f\n", v3.x, v3.y, v3.z, v3.magnitude);
+    printf("Vector4 x:%.2f y:%.2f z:%.2f and its magnitude:%.2f\n", v4.x, v4.y, v4.z, v4.magnitude);
+
+    printf("The distance: %.2f\n", distance_3(v3, v4));
+
     return 0;
 }
