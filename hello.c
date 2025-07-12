@@ -4,6 +4,7 @@
 int main()
 {
     printf("Testing Vectors\n");
+    // creating and testing 2 point vector
     vector2 v1 = create(2.12f, 3.15f);
     vector2 v2 = create(-3.15f, -1.50f);
 
@@ -12,7 +13,7 @@ int main()
 
     printf("Distance between v1 and v2 is %.2f\n\n", distance(v1, v2));
 
-    // creating and testing 3 vectors
+    // creating and testing 3 point vector
     vector3 v3 = create_3(2.5f, 3.0f, -10.f);
     vector3 v4 = create_3(-3.f, 2.0f, 6.f);
 
